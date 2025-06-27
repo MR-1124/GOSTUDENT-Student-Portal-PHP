@@ -1,7 +1,7 @@
 
 # **🎓 Student Portal**
 
-A modern, responsive web-based academic platform that allows students and teachers to manage assignments, quizzes, notices, grades, and a doubt-resolution system. Designed with a Material You-inspired interface and built using PHP and MySQL.
+A modern, responsive web-based academic platform that allows students and teachers to manage assignments, quizzes, notices, grades, and a doubt-resolution system. Designed with a Material You-inspired interface theme and built using PHP and MySQL.
 
 ---
 
@@ -116,8 +116,7 @@ $password = '';
 
 ### 🔒 5. File Upload Permissions
 
-Ensure `assets/uploads/` is writable.
-(Windows users generally don’t need to change anything)
+Ensure `assets/uploads/` is writable.(Linux)
 
 ---
 
@@ -165,7 +164,7 @@ You can register a new student/teacher or log in using any default credentials i
 
 ## 🙌 **Acknowledgments & References**
 
-This project was developed as part of a summer web development training program. AI tools were used for assistance during the coding process, but all logic, structure, and design decisions were made by the developer.
+This project was developed as part of a summer web development training program. AI tools were used for assistance during the coding process, but all logic, structure, and design decisions were made by the me .
 
 ### 🤝 Help/References:
 
