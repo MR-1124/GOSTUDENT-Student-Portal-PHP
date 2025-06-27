@@ -1,0 +1,203 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.main-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: calc(100vh - 200px);
+}
+
+nav {
+    background: linear-gradient(45deg, #26a69a, #4db6ac);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    transition: background-color 0.3s, color 0.3s;
+    padding: 0 15px !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff !important;
+}
+
+.sidenav-link {
+    color: #26a69a !important;
+    transition: background-color 0.3s;
+}
+
+.sidenav-link:hover {
+    background-color: #e0f2f1;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #26a69a;
+}
+
+.btn {
+    background-color: #26a69a;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #2bbbad;
+    transform: scale(1.05);
+}
+
+.round-avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid #26a69a;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+table.striped > tbody > tr:nth-child(odd) {
+    background-color: #e0f2f1;
+}
+
+table.striped > tbody > tr:hover {
+    background-color: #b2dfdb;
+    transition: background-color 0.3s;
+}
+
+table th, table td {
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.input-field label {
+    color: #26a69a;
+}
+
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+.input-field input[type=password]:focus + label,
+.input-field input[type=date]:focus + label,
+.input-field textarea:focus + label {
+    color: #2bbbad !important;
+}
+
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+.input-field input[type=password]:focus,
+.input-field input[type=date]:focus,
+.input-field textarea:focus {
+    border-bottom: 1px solid #2bbbad !important;
+    box-shadow: 0 1px 0 0 #2bbbad !important;
+}
+
+.modal {
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content {
+    padding: 40px !important;
+}
+
+.modal-content h4 {
+    color: #26a69a;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.modal-content .doubt-preview {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.modal-content .reply-preview {
+    background-color: #e0f2f1;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    padding: 20px !important;
+    border-top: 1px solid #e0e0e0;
+}
+
+.doubt-card {
+    background-color: #ffffff;
+    border-left: 4px solid #26a69a;
+}
+
+.reply-card {
+    background-color: #e0f2f1;
+    margin-left: 20px;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.reply-card.student-reply {
+    background-color: #e3f2fd;
+    border-left: 4px solid #42a5f5;
+}
+
+.reply-card.teacher-reply {
+    background-color: #e0f2f1;
+    border-left: 4px solid #26a69a;
+}
+
+.resolved-badge {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .card {
+        margin: 10px;
+    }
+    .round-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    table th, table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    .reply-card {
+        margin-left: 10px;
+    }
+    .modal {
+        max-width: 95%;
+    }
+    .modal-content {
+        padding: 20px !important;
+    }
+}
