@@ -133,6 +133,26 @@ You can register a new student/teacher or log in using any default credentials i
 
 ---
 
+### Few Screenshots
+
+![login](screenshots/login.png)
+
+![register](screenshots/register.png)
+
+![dashboard](screenshots/sdash.png)
+
+![assignments](screenshots/sassign.png)
+
+![quiz](screenshots/squiz.png)
+
+![profile](screenshots/profile.png)
+
+![dashboard](screenshots/tdash.png)
+
+![results](screenshots/results.png)
+
+![notice](screenshots/notice.png)
+
 
 ## 🔐 **Security Features**
 
