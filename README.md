@@ -5,7 +5,7 @@ A modern, responsive web-based academic platform that allows students and teache
 
 ---
 
-### View live demo: [https://mayan-roy.page.gd](https://mayan-roy.page.gd)
+
 
 ## 🔑 **Features**
 
