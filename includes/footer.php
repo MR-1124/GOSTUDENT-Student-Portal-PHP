@@ -32,7 +32,7 @@
             localStorage.setItem('sidebarCollapsed', isCollapsed ? 'true' : 'false');
         }
         
-        // Restore sidebar state from localStorage
+        
         document.addEventListener('DOMContentLoaded', function() {
             const sidebar = document.getElementById('sidebar');
             const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
@@ -40,7 +40,7 @@
                 sidebar.classList.add('collapsed');
             }
             
-            // Set active link based on current page
+            
             const currentPage = window.location.pathname.split('/').pop();
             document.querySelectorAll('.sidebar-link').forEach(link => {
                 if (link.getAttribute('href') === currentPage) {
@@ -49,7 +49,7 @@
             });
         });
         
-        // Mobile: Toggle sidebar when clicking outside
+        
         document.addEventListener('click', function(event) {
             const sidebar = document.getElementById('sidebar');
             const toggleBtn = document.querySelector('.sidebar-toggle');
@@ -61,7 +61,7 @@
             }
         });
         
-        // Prevent sidebar links from closing sidebar on desktop
+        
         document.querySelectorAll('.sidebar-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 if (window.innerWidth > 768) {
