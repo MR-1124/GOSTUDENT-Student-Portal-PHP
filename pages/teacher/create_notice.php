@@ -1,5 +1,11 @@
 <?php
-require_once '../../includes/header.php';
+require_once '../../includes/db.php';
+require_once '../../includes/functions.php';
+
+if (!isLoggedIn()) {
+    header("Location: ../../login.php");
+    exit;
+}
 checkTeacher();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -8,10 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $teacher_id = $_SESSION['user_id'];
     $image_path = null;
 
-    if ($_FILES['notice_image']['error'] == 0) {
-        $image_path = uploadFile($_FILES['notice_image']);
+    if (isset($_FILES['notice_image']) && $_FILES['notice_image']['error'] == 0) {
+        $image_path = uploadFile($_FILES['notice_image'], null, 'image');
         if (!$image_path) {
-            $error = "Invalid file path after upload!";
+            $error = "Invalid image file! Please upload JPG, PNG, GIF, or WEBP (max 5MB).";
         }
     }
 
@@ -22,44 +28,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 }
+
+require_once '../../includes/header.php';
 ?>
-<h4 class="center-align">Create Notice</h4>
-<div class="center-align">
-    <div class="col s12">
+
+<h2 class="mb-xl">Create Notice</h2>
+
+<div class="row">
+    <div class="col col-8" style="margin: 0 auto;">
         <div class="card">
             <div class="card-content">
                 <?php if (isset($error)): ?>
-                    <p class="red-text center-align"><?php echo $error; ?></p>
+                    <div class="alert alert-error mb-lg">
+                        <?php echo htmlspecialchars($error); ?>
+                    </div>
                 <?php endif; ?>
+                
                 <form method="POST" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="title" type="text" name="title" required>
-                            <label for="title">Title</label>
-                        </div>
+                    <div class="form-group">
+                        <label for="title" class="form-label">Notice Title</label>
+                        <input id="title" type="text" name="title" class="form-input" required autofocus>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="content" class="materialize-textarea" name="content" required></textarea>
-                            <label for="content">Content</label>
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="content" class="form-label">Content</label>
+                        <textarea id="content" name="content" class="form-textarea" rows="8" required></textarea>
                     </div>
-                    <div>
-                    <div class="file-field input-field col s12">
-                        <div class="btn">
-                            <span>Image</span>
-                            <input type="file" name="notice_image" accept="image/*">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                        </div>
+                    
+                    <div class="form-group">
+                        <label for="notice_image" class="form-label">Image (Optional)</label>
+                        <input type="file" name="notice_image" id="notice_image" class="form-input" accept="image/*">
+                        <p class="form-helper">Add an image to make your notice more engaging</p>
                     </div>
-                    <div class="center-align">
-                        <button type="btn waves-effect waves-light">Post Notice</button>
+                    
+                    <div class="flex gap-sm" style="margin-top: var(--spacing-lg);">
+                        <button type="submit" class="btn btn-primary">Post Notice</button>
+                        <a href="dashboard.php" class="btn btn-ghost">Cancel</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
 <?php require_once '../../includes/footer.php'; ?>

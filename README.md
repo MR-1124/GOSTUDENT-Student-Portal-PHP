@@ -1,7 +1,7 @@
 
-# **🎓 Student Portal**
+# **🎓 GOSTUDENT - Student Portal**
 
-A modern, responsive web-based academic platform that allows students and teachers to manage assignments, quizzes, notices, grades, and a doubt-resolution system. Designed with a Material You-inspired interface theme and built using PHP and MySQL.
+A modern, responsive web-based academic platform that allows students and teachers to manage assignments, quizzes, notices, grades, and a doubt-resolution system. Features a beautiful Apple-inspired design system with shadcn principles, built using PHP and MySQL.
 
 ---
 
@@ -15,7 +15,7 @@ A modern, responsive web-based academic platform that allows students and teache
 ### 🧑‍🎓 Student Panel
 
 * View and submit assignments with file uploads
-* View quiz results and breakdowns
+* View quiz results and details
 * Read notices posted by teachers
 * Post, reply to, and resolve academic doubts
 * View grades and teacher feedback
@@ -24,20 +24,24 @@ A modern, responsive web-based academic platform that allows students and teache
 ### 👩‍🏫 Teacher Panel
 
 * Create and manage assignments and quizzes
-* Post notices with optional images
-* Grade student submissions and provide feedback
-* Participate in doubt discussions
+* Post notices with images
+* Grade student submissions and add feedback
+* Participate in doubt discussions with students
 * Edit teacher profile details
 
 ---
 
 ## 🎨 **UI & Design**
 
-* Material You-inspired visual design
-* Poppins font via Google Fonts
-* Material Icons for UI elements
-* Smooth animations 
-* Fully responsive layout (mobile + desktop)
+* **Apple-inspired design system for design** with shadcn principles
+* **System font stack** (SF Pro Display, -apple-system) for optimal performance
+* **Inline SVG icons** for crisp, scalable graphics
+* **Glassmorphic navigation design** with backdrop blur
+* **Smooth animations** and micro-interactions
+* **Dark mode theme** via `prefers-color-scheme`
+* **Fully responsive for different devices** layout (mobile, tablet, desktop)
+* **Accessibility-first** approach (WCAG AA compliant)
+* **Custom CSS** - no external framework dependencies
 
 ---
 
@@ -46,8 +50,10 @@ A modern, responsive web-based academic platform that allows students and teache
 ### Frontend
 
 * HTML5, CSS3, JavaScript
-* [Materialize CSS v1.0.0](https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/)
-* [Google Fonts – Poppins](https://fonts.googleapis.com/css2?family=Poppins)
+* **Custom Apple-inspired CSS** (`assets/css/apple-theme.css`)
+* **System fonts** (no external font loading)
+* **Inline SVG icons** (no icon library needed)
+* **Minimal JavaScript** (modals and mobile menu only)
 
 
 ### Backend
@@ -96,8 +102,9 @@ C:\xampp\htdocs\GOSTUDENT-Student-Portal-PHP
 2. Click **New** and create a database named:
    `student_portal`
 3. Go to the **Import** tab
-4. Choose `db.sql` from the project folder
+4. Choose `database/db.sql` from the project folder
 5. Click **Go** to import tables and data
+6. (Optional) Import `database/quick_sample_data.sql` for sample content
 
 ---
 
@@ -109,14 +116,14 @@ Edit `includes/db.php`:
 $host = 'localhost';
 $dbname = 'student_portal';
 $username = 'root';
-$password = '';
+$password = 'your_password_here_for_mysql';
 ```
 
 ---
 
 ### 🔒 5. File Upload Permissions
 
-Ensure `assets/uploads/` is writable.(Linux)
+Ensure `assets/uploads/` is writable.
 
 ---
 
@@ -144,14 +151,41 @@ You can register a new student/teacher or log in using any default credentials i
 
 ![quiz](screenshots/squiz.png)
 
-![profile](screenshots/profile.png)
-
 ![dashboard](screenshots/tdash.png)
 
 ![results](screenshots/results.png)
 
 ![notice](screenshots/notice.png)
 
+---
+
+## ✨ **What's New in Version 2.1**
+
+### 🎨 Major UI Improvements
+* **Collapsible Side Navbar** - Modern sidebar with smooth expand/collapse
+* **Redesigned Login/Signup** - Glassmorphic cards with animated backgrounds
+* **Enhanced Notice Cards** - Professional layout with fixed image sizing
+* **Improved Components** - Better cards, tables, and forms
+* **New Dashboard Elements** - Welcome banners, stats grids, page headers
+
+### 🐛 Critical Bug Fixes
+* **File Upload Fixed** - Assignments now support PDF, DOC, DOCX, and more
+* **Header Warning Fixed** - Resolved "headers already sent" errors
+* **Notice Images Fixed** - Images now display correctly with proper sizing
+
+### 🚀 Performance & Features
+* **Multi-Type File Support** - Documents (10MB) and images (5MB)
+* **State Persistence** - Sidebar remembers collapsed/expanded state
+* **Better Error Messages** - Clear feedback for file uploads
+* **Sample Data Included** - Quick setup with pre-made content
+
+### 📱 Enhanced Mobile Experience
+* **Responsive Sidebar** - Slides off-screen on mobile
+* **Touch-Friendly** - Better button sizes and interactions
+* **Adaptive Layouts** - Cards and forms stack properly
+* **Smooth Animations** - 60fps transitions throughout
+
+---
 
 ## 🔐 **Security Features**
 
@@ -162,25 +196,41 @@ You can register a new student/teacher or log in using any default credentials i
 
 ---
 
+## 📚 **Documentation**
+
+* **[CHANGELOG.md](CHANGELOG.md)** - Complete version history and changes
+* **[database/README.md](database/README.md)** - Database files guide
+* **Sample Data** - Use `database/quick_sample_data.sql` for quick setup
+* **Database Schema** - See `database/db.sql` for complete structure
+
+### Design Inspiration
+
+* **Apple Human Interface Guidelines** - Design principles and patterns
+* **shadcn/ui** - Component architecture and utility-first approach
+* **System Fonts** - Using native OS fonts for optimal performance
+
+---
+
 ## 🙌 **Acknowledgments & References**
 
-This project was developed as part of a summer web development training program. AI tools were used for assistance during the coding process, but all logic, structure, and design decisions were made by the me .
+This project was developed as part of a summer web development training program. AI tools were used for assistance during the coding process, but all logic, structure, and design decisions were made by me.
 
 ### 🤝 Help/References:
 
-* **ChatGPT (OpenAI):** Used to assist with logic design, PHP debugging, and code generation
-* **MaterializeCSS Documentation:** For UI components and responsive layout
+* **AI Tools:** Used to assist with logic design, PHP debugging, code generation, and bug fixing
+* **Apple Design Resources:** For design inspiration and principles
+* **shadcn/ui:** For component architecture patterns
+* **React Bits:** For design inspiration and UI patterns
 * **W3Schools & PHP Manual:** For syntax references, MySQL PDO examples, and form handling
 
 > ⚠️ **AI Usage Note:**
-> Some portions of the code (e.g., post functionality, layout scaffolding, utility functions) were generated with the help of AI tools like ChatGPT. All code was reviewed, understood, modified, and integrated manually by me. This project represents my own learning and effort.
+> Some portions of the code (e.g., post functionality, layout scaffolding, utility functions) were generated with the help of AI tools. AI assistance was also used for debugging issues during sidebar implementation and fixing various design bugs while working on the project. All code was reviewed, understood, modified, and integrated manually by me. This project represents my own learning and effort.
 
 ---
 
 ## 📄 **License**
 
 This project is licensed under the **MIT License**.
-See the `LICENSE` file for details.
 
 ---
 

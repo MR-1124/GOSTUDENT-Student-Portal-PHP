@@ -1,6 +1,11 @@
 <?php
 require_once '../../includes/db.php';
 require_once '../../includes/functions.php';
+
+if (!isLoggedIn()) {
+    header("Location: ../../login.php");
+    exit;
+}
 checkStudent();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -41,8 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 }
+
+require_once '../../includes/header.php';
 ?>
-<?php require_once '../../includes/header.php'; ?>
 <h4>Error</h4>
 <p><?php echo $error; ?></p>
 <a href="quizzes.php" class="btn">Back to Quizzes</a>
